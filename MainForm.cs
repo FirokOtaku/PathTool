@@ -56,6 +56,7 @@ namespace PathTool
         {
             if(keyPathTool!=null) // 之前有
             {
+                keyPathTool.SetValue("Icon", pathCurrent); // 设定图标
                 RegistryKey keyPathToolCommand = keyPathTool.GetSubKeyNames().Contains("command")?
                     keyPathTool.OpenSubKey("command",true):
                     keyPathTool.CreateSubKey("command",RegistryKeyPermissionCheck.ReadWriteSubTree);
@@ -66,6 +67,7 @@ namespace PathTool
                 keyPathTool = keyShell.CreateSubKey("PathTool"); // 创建键值对
                 keyPathTool.SetValue(KeyIsPathToolKey, "True", RegistryValueKind.String);
                 keyPathTool.SetValue(null, "Path Tool");
+                keyPathTool.SetValue("Icon", pathCurrent); // 设定图标
 
                 RegistryKey keyPathToolCommand = keyPathTool.CreateSubKey("command");
                 keyPathToolCommand.SetValue(null, pathCurrent+" -execute");
@@ -78,7 +80,9 @@ namespace PathTool
         {
             if(keyPathTool!=null)
             {
-                keyShell.DeleteSubKeyTree( keyPathTool.Name.Substring(keyPathTool.Name.LastIndexOf("\\")) );
+                string toRemove = keyPathTool.Name.Substring(keyPathTool.Name.LastIndexOf("\\")+1);
+                keyShell.DeleteSubKeyTree( toRemove, false );
+                // MessageBox.Show("移除了"+toRemove);
                 tbReg.Text = "";
                 keyPathTool = null;
             }
@@ -87,14 +91,22 @@ namespace PathTool
 
         private void btnAbout_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(this, 
-@"我们向注册表的 HKEY_CLASSES_ROOT\\Directory\\Background 添加一项数据来将本工具注册至资源管理器右键菜单
+            MessageBox.Show(this,
+@"=== 说明 ===
+我们向注册表的 HKEY_CLASSES_ROOT\\Directory\\Background 添加一项数据来将本工具注册至资源管理器右键菜单
 成功注册后, 您便可使用资源管理器右键菜单中的Path Tool来快速将某目录增加至/移除自系统的Path环境变量
 如果更换本工具位置, 需要重新注册
 
-PathTool 1.0 by Firok
+=== PathTool 1.1 by Firok ===
+查看源码、检查更新或提交问题请访问 github.com/351768593/PathTool
 
-查看源码、检查更新或提交问题请访问 github.com/351768593/PathTool", "说明", MessageBoxButtons.OK);        }
+=== 感谢以下各位参加测试 ===
+● Kirisu
+● madflea
+● Notsfsssf
+● scott
+● yyh
+", "说明", MessageBoxButtons.OK);        }
 
         private static void log(object obj)
         {

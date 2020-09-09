@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tbCurrent = new System.Windows.Forms.TextBox();
@@ -51,13 +52,13 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(2, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 21);
+            this.label2.Size = new System.Drawing.Size(122, 21);
             this.label2.TabIndex = 1;
-            this.label2.Text = "注册表注册路路径";
+            this.label2.Text = "注册表注册路径";
             // 
             // tbCurrent
             // 
-            this.tbCurrent.Location = new System.Drawing.Point(146, 6);
+            this.tbCurrent.Location = new System.Drawing.Point(124, 6);
             this.tbCurrent.Name = "tbCurrent";
             this.tbCurrent.ReadOnly = true;
             this.tbCurrent.Size = new System.Drawing.Size(769, 29);
@@ -65,7 +66,7 @@
             // 
             // tbReg
             // 
-            this.tbReg.Location = new System.Drawing.Point(146, 41);
+            this.tbReg.Location = new System.Drawing.Point(124, 41);
             this.tbReg.Name = "tbReg";
             this.tbReg.ReadOnly = true;
             this.tbReg.Size = new System.Drawing.Size(769, 29);
@@ -73,7 +74,7 @@
             // 
             // btnReg
             // 
-            this.btnReg.Location = new System.Drawing.Point(921, 5);
+            this.btnReg.Location = new System.Drawing.Point(899, 5);
             this.btnReg.Name = "btnReg";
             this.btnReg.Size = new System.Drawing.Size(51, 65);
             this.btnReg.TabIndex = 4;
@@ -83,7 +84,7 @@
             // 
             // btnAbout
             // 
-            this.btnAbout.Location = new System.Drawing.Point(978, 6);
+            this.btnAbout.Location = new System.Drawing.Point(956, 6);
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.Size = new System.Drawing.Size(51, 65);
             this.btnAbout.TabIndex = 5;
@@ -93,7 +94,7 @@
             // 
             // btnRegedit
             // 
-            this.btnRegedit.Location = new System.Drawing.Point(1035, 6);
+            this.btnRegedit.Location = new System.Drawing.Point(1013, 6);
             this.btnRegedit.Name = "btnRegedit";
             this.btnRegedit.Size = new System.Drawing.Size(73, 65);
             this.btnRegedit.TabIndex = 6;
@@ -105,7 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1116, 76);
+            this.ClientSize = new System.Drawing.Size(1094, 76);
             this.Controls.Add(this.btnRegedit);
             this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.btnReg);
@@ -115,10 +116,11 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PathTool 1.0 by Firok";
+            this.Text = "PathTool 1.1 by Firok";
             this.ResumeLayout(false);
             this.PerformLayout();
 
