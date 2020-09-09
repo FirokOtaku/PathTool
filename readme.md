@@ -2,6 +2,8 @@
 
 一个快速修改系统环境变量`path`的小工具.
 
+下载地址: [GitHub Release](https://github.com/351768593/PathTool/releases)
+
 ## 使用说明
 
 双击启动后, 点击注册按钮可以将本工具注册至资源管理器右键菜单.
